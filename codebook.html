@@ -7,7 +7,7 @@ h2{font-size:20px;margin:0 0 12px}h3{font-size:16px;margin:18px 0 8px}.muted{col
 .btn{border:0;border-radius:8px;padding:11px 16px;background:var(--blue);color:white;font-weight:650;cursor:pointer;font-size:14px}.btn:hover{filter:brightness(.95)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.secondary{background:white;color:var(--navy);border:1px solid var(--line)}.btn.danger{background:var(--bad)}
 .progress{height:9px;background:#e6ebf2;border-radius:9px;overflow:hidden;margin-top:8px}.progress>div{height:100%;background:var(--good);transition:width .2s}
 .choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:9px 0 17px}.choice{border:1px solid var(--line);background:white;border-radius:9px;padding:12px;text-align:left;cursor:pointer;color:var(--text)}.choice:hover{border-color:#8fb1ed;background:#f8fbff}.choice.selected{border:2px solid var(--blue);background:#eef5ff;padding:11px}.choice b{display:block}.choice span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
-.confidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 18px}.confidence-grid .choice{text-align:center;padding:10px}.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.post-text{white-space:pre-wrap;background:#f8fafc;border-left:4px solid #b8c6d8;padding:16px;border-radius:6px;max-height:42vh;overflow:auto;font-size:15px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.post-text{white-space:pre-wrap;background:#f8fafc;border-left:4px solid #b8c6d8;padding:16px;border-radius:6px;max-height:42vh;overflow:auto;font-size:15px}
 .codebook-modal{display:none;position:fixed;inset:0;background:#0008;z-index:100;padding:18px}.codebook-modal.open{display:flex;align-items:center;justify-content:center}.codebook-panel{background:white;border-radius:12px;padding:22px;max-width:850px;max-height:92vh;overflow:auto;position:relative}.close{position:sticky;float:right;top:0;border:0;background:#eef2f6;border-radius:50%;font-size:22px;width:36px;height:36px;cursor:pointer}
 table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}th{background:#f3f6fa}
 .status-good{border-left:5px solid var(--good)}.status-warn{border-left:5px solid var(--warn)}.status-bad{border-left:5px solid var(--bad)}
@@ -15,43 +15,41 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid 
 .attention-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.attention-option{text-align:center;font-size:16px}.attention-option .emoji{font-size:48px;display:block;margin-bottom:4px}
 .feedback{padding:13px;border-radius:8px;margin-top:14px}.feedback.good{background:#e8f7ef;color:#0f5e39}.feedback.bad{background:#fff0ef;color:#8f1d17}
 input[type=text]{width:100%;max-width:460px;padding:11px;border:1px solid var(--line);border-radius:8px;font-size:15px}
-@media(max-width:680px){.wrap{padding:12px}.card{padding:15px}.choice-grid{grid-template-columns:1fr}.attention-grid{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.post-text{max-height:36vh}}</style></head><body><header><h1>Human coding codebook</h1><div class="meta"><a class="btn secondary" href="index.html">Home</a></div></header><main class="wrap"><section class="card"><h2>Quick codebook</h2>
-<p><strong>Code only what the post explicitly represents.</strong> Do not judge whether it is true and do not give your own opinion. Human Experience and AI Role are separate decisions.</p>
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{background:#f7f9fc;border:1px solid var(--line);border-radius:10px;padding:12px}.metric strong{display:block;font-size:22px;color:var(--navy)}
+.save-status{font-size:12px;color:#d9e8f5;min-width:80px;text-align:right}.save-status.error{color:#ffd0cc}.save-status.saved{color:#b9f5d2}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#8f1d17;color:white;padding:13px 18px;border-radius:9px;box-shadow:0 8px 30px #0004;z-index:200;opacity:0;transition:.2s;max-width:90%;font-weight:650}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.question-block{border:2px solid transparent;border-radius:10px;padding:2px 8px}.question-block.missing{border-color:var(--bad);background:#fff7f6}.codebook-check{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
+@media(max-width:680px){.wrap{padding:12px}.card{padding:15px}.choice-grid{grid-template-columns:1fr}.attention-grid{grid-template-columns:repeat(2,1fr)}.overview-grid{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.post-text{max-height:36vh}}</style></head><body><header><h1>Human coding codebook</h1><div class="meta"><a class="btn secondary" href="index.html">Home</a></div></header><main class="wrap"><section class="card"><h2>Quick codebook</h2>
+<p><strong>Code what the post states or clearly implies.</strong> Use only the words and meaning in the post. Do not decide whether it is true, add missing information, or give your own opinion.</p>
+<p>For every post, answer two separate questions. A post can affect people and portray AI differently.</p>
 
-<h3>1. Human Experience</h3>
+<h3>1. What happens to people?</h3>
 <table>
-<tr><th>Code</th><th>Choose it when the post says…</th></tr>
-<tr><td><b>EXTENSION</b></td><td>AI helps a person do an existing task better, faster, more easily, or at greater scale.</td></tr>
-<tr><td><b>EXPANSION</b></td><td>AI gives a person a genuinely new ability, perspective, learning opportunity, or possibility.</td></tr>
-<tr><td><b>RESTRICTION</b></td><td>AI limits or threatens human control, choice, privacy, or autonomy—for example refusal, surveillance, manipulation, dependence, or lock-in.</td></tr>
-<tr><td><b>REDUCTION</b></td><td>AI is represented as actually diminishing human skills, livelihood, creativity, cognition, identity, or well-being.</td></tr>
-<tr><td><b>NEUTRAL</b></td><td>No clear human change is stated. Common examples: headlines, event announcements, product feature lists, and AI-art captions with no human effect.</td></tr>
+<tr><th>Choose this explanation</th><th>Meaning</th></tr>
+<tr><td><b>AI helps people do something they already do</b></td><td>The task becomes better, faster, easier, or possible at a larger scale.</td></tr>
+<tr><td><b>AI gives people a new ability or possibility</b></td><td>The person gains a genuinely new capacity, perspective, learning opportunity, or option.</td></tr>
+<tr><td><b>AI limits people’s control or choices</b></td><td>The post states or clearly implies refusal, surveillance, manipulation, dependence, loss of privacy, or lock-in.</td></tr>
+<tr><td><b>AI causes people to lose skills or well-being</b></td><td>The post represents an actual reduction in skills, livelihood, creativity, thinking, identity, or well-being.</td></tr>
+<tr><td><b>No clear effect on people</b></td><td>No human change is stated or clearly implied. Examples include headlines, event announcements, feature lists, or AI-art captions without a human effect.</td></tr>
 </table>
 
-<h3>2. AI Role</h3>
+<h3>2. What role does AI play?</h3>
 <table>
-<tr><th>Code</th><th>Choose it when the post says…</th></tr>
-<tr><td><b>AI_EXTENSION</b></td><td>AI works successfully, reliably, or usefully, or produces a useful completed output.</td></tr>
-<tr><td><b>AI_EXPANSION</b></td><td>AI, its company, or its ecosystem explicitly gains learning, data, profit, adoption, market reach, or growth.</td></tr>
-<tr><td><b>AI_RESTRICTION</b></td><td>AI constrains human agency: it blocks, refuses, censors, gatekeeps, manipulates, or induces dependence.</td></tr>
-<tr><td><b>AI_REDUCTION</b></td><td>AI fails, hallucinates, deteriorates, produces poor output, or is represented as causing communal damage.</td></tr>
-<tr><td><b>NEUTRAL</b></td><td>No clear AI performance, gain, constraint, or failure is stated.</td></tr>
+<tr><th>Choose this explanation</th><th>Meaning</th></tr>
+<tr><td><b>AI works or produces a useful result</b></td><td>AI is represented as successful, reliable, useful, or producing a useful completed output.</td></tr>
+<tr><td><b>AI or its company gains data, users, learning, or growth</b></td><td>The post states or clearly implies learning, data collection, profit, adoption, market reach, or ecosystem growth.</td></tr>
+<tr><td><b>AI blocks, manipulates, or controls people</b></td><td>AI refuses, censors, gatekeeps, manipulates, surveils, or creates dependence.</td></tr>
+<tr><td><b>AI fails, performs badly, or causes broader harm</b></td><td>AI hallucinates, deteriorates, produces poor output, fails, or is represented as causing communal damage.</td></tr>
+<tr><td><b>No clear result for AI</b></td><td>No clear AI success, gain, constraint, or failure is stated or clearly implied.</td></tr>
 </table>
 
 <h3>Fast boundary rules</h3>
 <ul>
-<li><b>Existing task improved → Human EXTENSION.</b> Genuinely new capacity → Human EXPANSION.</li>
-<li>“AI was tested” with no result → <b>NEUTRAL</b>, not AI_EXTENSION.</li>
-<li>A product advertisement does not automatically create a Human benefit. Concrete successful AI functions may still be <b>AI_EXTENSION</b>.</li>
-<li>“Smarter/better/faster output” is usually <b>AI_EXTENSION</b>, not AI_EXPANSION.</li>
-<li>Bare AI-art hashtags or third-party credits are usually <b>NEUTRAL/NEUTRAL</b>. A creator explicitly showing their own completed output with a named AI tool may support EXTENSION/AI_EXTENSION.</li>
-<li>Non-generative robotics or an unconnected #AI tag → <b>NEUTRAL/NEUTRAL</b>.</li>
-<li>Possible dependence or manipulative attachment → <b>RESTRICTION/AI_RESTRICTION</b>. Realized loss of skill or well-being → <b>REDUCTION</b>.</li>
-</ul>
-
-<h3>Confidence</h3>
-<ul>
-<li><b>HIGH:</b> the post states the signal directly.</li>
-<li><b>MEDIUM:</b> the label is supported but requires some interpretation.</li>
-<li><b>LOW:</b> genuinely ambiguous; you are making your best choice.</li>
+<li>An existing task becomes easier or better → choose <b>“helps people do something they already do.”</b></li>
+<li>A genuinely new human capacity appears → choose <b>“gives people a new ability or possibility.”</b></li>
+<li>“AI was tested” without a result → choose <b>“No clear result for AI.”</b></li>
+<li>A product advertisement does not automatically prove an effect on people. It may still clearly claim that AI performs useful functions.</li>
+<li>“Smarter,” “better,” or “faster” output usually means that AI works; it does not by itself mean that AI or its company grows.</li>
+<li>Bare AI-art hashtags, third-party credits, non-generative robotics, or an unrelated #AI tag usually provide no clear effect on people and no clear result for AI.</li>
+<li>Possible dependence or manipulation concerns control and choice. An actual loss of skill or well-being concerns a realized human loss.</li>
 </ul></section></main><script></script></body></html>
