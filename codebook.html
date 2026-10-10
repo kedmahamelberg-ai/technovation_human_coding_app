@@ -6,7 +6,7 @@ header h1{font-size:17px;margin:0}header .meta{font-size:13px;color:#d9e8f5;disp
 h2{font-size:20px;margin:0 0 12px}h3{font-size:16px;margin:18px 0 8px}.muted{color:var(--muted)}.small{font-size:13px}.hidden{display:none!important}
 .btn{border:0;border-radius:8px;padding:11px 16px;background:var(--blue);color:white;font-weight:650;cursor:pointer;font-size:14px}.btn:hover{filter:brightness(.95)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.secondary{background:white;color:var(--navy);border:1px solid var(--line)}.btn.danger{background:var(--bad)}
 .progress{height:9px;background:#e6ebf2;border-radius:9px;overflow:hidden;margin-top:8px}.progress>div{height:100%;background:var(--good);transition:width .2s}
-.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:9px 0 17px}.choice{border:1px solid var(--line);background:white;border-radius:9px;padding:12px;text-align:left;cursor:pointer;color:var(--text)}.choice:hover{border-color:#8fb1ed;background:#f8fbff}.choice.selected{border:2px solid var(--blue);background:#eef5ff;padding:11px}.choice b{display:block}.choice span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:9px 0 17px}.choice{border:1px solid var(--line);background:white;border-radius:9px;padding:12px;text-align:left;cursor:pointer;color:var(--text)}.choice:hover{border-color:#8fb1ed;background:#f8fbff}.choice.selected{border:2px solid var(--blue);background:#eef5ff;padding:11px}.choice.correct{border-color:var(--good);background:#ecfdf3;box-shadow:0 0 0 2px rgba(22,121,74,.12)}.choice b{display:block}.choice span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
 .nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.post-text{white-space:pre-wrap;background:#f8fafc;border-left:4px solid #b8c6d8;padding:16px;border-radius:6px;max-height:42vh;overflow:auto;font-size:15px}
 .codebook-modal{display:none;position:fixed;inset:0;background:#0008;z-index:100;padding:18px}.codebook-modal.open{display:flex;align-items:center;justify-content:center}.codebook-panel{background:white;border-radius:12px;padding:22px;max-width:850px;max-height:92vh;overflow:auto;position:relative}.close{position:sticky;float:right;top:0;border:0;background:#eef2f6;border-radius:50%;font-size:22px;width:36px;height:36px;cursor:pointer}
 table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}th{background:#f3f6fa}
@@ -20,36 +20,38 @@ input[type=text]{width:100%;max-width:460px;padding:11px;border:1px solid var(--
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#8f1d17;color:white;padding:13px 18px;border-radius:9px;box-shadow:0 8px 30px #0004;z-index:200;opacity:0;transition:.2s;max-width:90%;font-weight:650}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .question-block{border:2px solid transparent;border-radius:10px;padding:2px 8px}.question-block.missing{border-color:var(--bad);background:#fff7f6}.codebook-check{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
 @media(max-width:680px){.wrap{padding:12px}.card{padding:15px}.choice-grid{grid-template-columns:1fr}.attention-grid{grid-template-columns:repeat(2,1fr)}.overview-grid{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.post-text{max-height:36vh}}</style></head><body><header><h1>Human coding codebook</h1><div class="meta"><a class="btn secondary" href="index.html">Home</a></div></header><main class="wrap"><section class="card"><h2>Quick codebook</h2>
-<p><strong>Code what the post states or clearly implies.</strong> Use only the words and meaning in the post. Do not decide whether it is true, add missing information, or give your own opinion.</p>
-<p>For every post, answer two separate questions. A post can affect people and portray AI differently.</p>
+<p><strong>Code how the post represents people and AI.</strong> Use only what the post states or clearly implies. Do not decide whether a claim is true, add missing information, or give your own opinion.</p>
+<p>Answer the two questions separately. A post can describe an effect on people without describing an outcome for the AI system, or the reverse.</p>
+<p><strong>You can reopen this guide from the top-right button at any time during practice and all six coding sessions.</strong></p>
 
 <h3>1. What happens to people?</h3>
 <table>
 <tr><th>Choose this explanation</th><th>Meaning</th></tr>
-<tr><td><b>AI helps people do something they already do</b></td><td>The task becomes better, faster, easier, or possible at a larger scale.</td></tr>
-<tr><td><b>AI gives people a new ability or possibility</b></td><td>The person gains a genuinely new capacity, perspective, learning opportunity, or option.</td></tr>
-<tr><td><b>AI limits people’s control or choices</b></td><td>The post states or clearly implies refusal, surveillance, manipulation, dependence, loss of privacy, or lock-in.</td></tr>
-<tr><td><b>AI causes people to lose skills or well-being</b></td><td>The post represents an actual reduction in skills, livelihood, creativity, thinking, identity, or well-being.</td></tr>
-<tr><td><b>No clear effect on people</b></td><td>No human change is stated or clearly implied. Examples include headlines, event announcements, feature lists, or AI-art captions without a human effect.</td></tr>
+<tr><td><b>People use AI to improve something they already do</b></td><td>An existing task or ability becomes faster, easier, better, or possible at a larger scale. Example: preparing an estimate in seconds instead of days.</td></tr>
+<tr><td><b>People gain a new ability or possibility through AI</b></td><td>The post describes a genuinely new capacity, perspective, learning opportunity, creative path, or form of participation.</td></tr>
+<tr><td><b>People have less control, privacy, access, or choice because of AI</b></td><td>The post describes or clearly anticipates surveillance, manipulation, dependence, lock-in, refusal, privacy risk, or loss of agency.</td></tr>
+<tr><td><b>People lose skills, livelihood, creativity, identity, or well-being because of AI</b></td><td>The post represents an actual diminishment or damaging human outcome, such as lost work, weakened skills, poorer thinking, or harm to well-being.</td></tr>
+<tr><td><b>No clear change for people</b></td><td>No enabling or constraining human experience is stated or clearly implied. A headline, event, feature list, or AI mention can be neutral when it does not describe a human change.</td></tr>
 </table>
 
-<h3>2. What role does AI play?</h3>
+<h3>2. How is the AI system represented?</h3>
 <table>
 <tr><th>Choose this explanation</th><th>Meaning</th></tr>
-<tr><td><b>AI works or produces a useful result</b></td><td>AI is represented as successful, reliable, useful, or producing a useful completed output.</td></tr>
-<tr><td><b>AI or its company gains data, users, learning, or growth</b></td><td>The post states or clearly implies learning, data collection, profit, adoption, market reach, or ecosystem growth.</td></tr>
-<tr><td><b>AI blocks, manipulates, or controls people</b></td><td>AI refuses, censors, gatekeeps, manipulates, surveils, or creates dependence.</td></tr>
-<tr><td><b>AI fails, performs badly, or causes broader harm</b></td><td>AI hallucinates, deteriorates, produces poor output, fails, or is represented as causing communal damage.</td></tr>
-<tr><td><b>No clear result for AI</b></td><td>No clear AI success, gain, constraint, or failure is stated or clearly implied.</td></tr>
+<tr><td><b>The post describes the system as working or producing a useful result</b></td><td>A concrete function, output, or performance is represented as reliable, useful, successful, or effective.</td></tr>
+<tr><td><b>The post describes growth in data, users, learning, profit, adoption, or reach</b></td><td>The central claim concerns development of the model or growth of its operator or ecosystem—for example, added training data, more users, profit, adoption, or market reach.</td></tr>
+<tr><td><b>The post describes AI-related access or action as blocked, refused, limited, or constraining people</b></td><td>The represented action or access is refused, censored, gatekept, withheld, banned, or limited—or the system’s operation constrains people through surveillance, manipulation, or dependence.</td></tr>
+<tr><td><b>The post describes system failure, poor output, deterioration, or broader harm</b></td><td>The post represents errors, hallucinations, unreliability, worsening quality, harmful synthetic content, misinformation, fraud, stereotypes, or other damaging outcomes.</td></tr>
+<tr><td><b>No clear outcome for the AI system or ecosystem</b></td><td>AI may be mentioned, questioned, advertised, credited, or discussed, but no clear function, growth, restriction, failure, or damaging outcome is represented.</td></tr>
 </table>
 
-<h3>Fast boundary rules</h3>
+<h3>Fast decision rules</h3>
 <ul>
-<li>An existing task becomes easier or better → choose <b>“helps people do something they already do.”</b></li>
-<li>A genuinely new human capacity appears → choose <b>“gives people a new ability or possibility.”</b></li>
-<li>“AI was tested” without a result → choose <b>“No clear result for AI.”</b></li>
-<li>A product advertisement does not automatically prove an effect on people. It may still clearly claim that AI performs useful functions.</li>
-<li>“Smarter,” “better,” or “faster” output usually means that AI works; it does not by itself mean that AI or its company grows.</li>
-<li>Bare AI-art hashtags, third-party credits, non-generative robotics, or an unrelated #AI tag usually provide no clear effect on people and no clear result for AI.</li>
-<li>Possible dependence or manipulation concerns control and choice. An actual loss of skill or well-being concerns a realized human loss.</li>
+<li><b>Existing task improved →</b> people improve something they already do. <b>Genuinely new capacity or path →</b> people gain a new ability or possibility.</li>
+<li><b>Less autonomy, privacy, access, or choice →</b> people have less control. <b>Actual loss of skill, livelihood, creativity, identity, or well-being →</b> people lose something.</li>
+<li>A product or feature advertisement does not automatically establish a human experience. A concrete claimed function or output can still establish that the system is represented as working.</li>
+<li>“Smarter,” “better,” “faster,” or a useful completed output concerns system performance. Use the growth choice only when data, learning, profit, users, adoption, or reach is explicit and central.</li>
+<li>“AI was tested” with no result, an event announcement, an unrelated #AI tag, or a general question about AI usually gives no clear system outcome.</li>
+<li>For AI-generated content, look at the wording: a concrete useful output supports system performance; an explicit new creative path can support a new human possibility; a bare credit or hashtag alone may remain neutral.</li>
+<li>If several signals appear, choose the clearest main representation in the post. Do not invent a secondary effect.</li>
+<li><b>Do not ask what AI wants, feels, or deserves.</b> Judge only the behavior or outcome that the post attributes to the system, operator, or ecosystem.</li>
 </ul></section></main><script></script></body></html>
