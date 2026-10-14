@@ -20,8 +20,9 @@ input[type=text]{width:100%;max-width:460px;padding:11px;border:1px solid var(--
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#8f1d17;color:white;padding:13px 18px;border-radius:9px;box-shadow:0 8px 30px #0004;z-index:200;opacity:0;transition:.2s;max-width:90%;font-weight:650}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .question-block{border:2px solid transparent;border-radius:10px;padding:2px 8px}.question-block.missing{border-color:var(--bad);background:#fff7f6}.codebook-check{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
 @media(max-width:680px){.wrap{padding:12px}.card{padding:15px}.choice-grid{grid-template-columns:1fr}.attention-grid{grid-template-columns:repeat(2,1fr)}.overview-grid{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.post-text{max-height:36vh}}</style></head><body><header><h1>Human coding codebook</h1><div class="meta"><a class="btn secondary" href="index.html">Home</a></div></header><main class="wrap"><section class="card"><h2>Quick codebook</h2>
-<p><strong>Code how the post represents people and AI.</strong> Use only what the post states or clearly implies. Do not decide whether a claim is true, add missing information, or give your own opinion.</p>
+<p><strong>Code how the post represents people and AI.</strong> Choose a non-neutral answer only when the post states the outcome or makes it clear from its wording. Do not infer an outcome from a hashtag, product category, or outside knowledge. Do not decide whether a claim is true or give your own opinion.</p>
 <p>Answer the two questions separately. A post can describe an effect on people without describing an outcome for the AI system, or the reverse.</p>
+<p>Choose one answer for each question. If several signals appear, choose the outcome that is most explicit and central in the post.</p>
 <p><strong>You can reopen this guide from the top-right button at any time during practice and all six coding sessions.</strong></p>
 
 <h3>1. What happens to people?</h3>
@@ -29,29 +30,28 @@ input[type=text]{width:100%;max-width:460px;padding:11px;border:1px solid var(--
 <tr><th>Choose this explanation</th><th>Meaning</th></tr>
 <tr><td><b>People use AI to improve something they already do</b></td><td>An existing task or ability becomes faster, easier, better, or possible at a larger scale. Example: preparing an estimate in seconds instead of days.</td></tr>
 <tr><td><b>People gain a new ability or possibility through AI</b></td><td>The post describes a genuinely new capacity, perspective, learning opportunity, creative path, or form of participation.</td></tr>
-<tr><td><b>People have less control, privacy, access, or choice because of AI</b></td><td>The post describes or clearly anticipates surveillance, manipulation, dependence, lock-in, refusal, privacy risk, or loss of agency.</td></tr>
-<tr><td><b>People lose skills, livelihood, creativity, identity, or well-being because of AI</b></td><td>The post represents an actual diminishment or damaging human outcome, such as lost work, weakened skills, poorer thinking, or harm to well-being.</td></tr>
+<tr><td><b>People have less control, privacy, access, or choice because of AI</b></td><td>The central human outcome is less control or choice through refusal, pressure, manipulation, surveillance, dependence, lock-in, or privacy risk. Discomfort such as annoyance or guilt does not by itself establish a loss of well-being.</td></tr>
+<tr><td><b>People lose skills, livelihood, creativity, identity, or well-being because of AI</b></td><td>The post reports an actual deterioration in a human capability or condition, such as lost work, weakened skills, poorer thinking, damaged identity, or sustained harm to well-being.</td></tr>
 <tr><td><b>No clear change for people</b></td><td>No enabling or constraining human experience is stated or clearly implied. A headline, event, feature list, or AI mention can be neutral when it does not describe a human change.</td></tr>
 </table>
 
-<h3>2. How is the AI system represented?</h3>
+<h3>2. What does the post say about the AI system or AI company?</h3>
 <table>
 <tr><th>Choose this explanation</th><th>Meaning</th></tr>
 <tr><td><b>The post describes the system as working or producing a useful result</b></td><td>A concrete function, output, or performance is represented as reliable, useful, successful, or effective.</td></tr>
 <tr><td><b>The post describes growth in data, users, learning, profit, adoption, or reach</b></td><td>The central claim concerns development of the model or growth of its operator or ecosystem—for example, added training data, more users, profit, adoption, or market reach.</td></tr>
-<tr><td><b>The post describes AI-related access or action as blocked, refused, limited, or constraining people</b></td><td>The represented action or access is refused, censored, gatekept, withheld, banned, or limited—or the system’s operation constrains people through surveillance, manipulation, or dependence.</td></tr>
-<tr><td><b>The post describes system failure, poor output, deterioration, or broader harm</b></td><td>The post represents errors, hallucinations, unreliability, worsening quality, harmful synthetic content, misinformation, fraud, stereotypes, or other damaging outcomes.</td></tr>
+<tr><td><b>The post describes AI-related access, action, or human control as blocked or constrained</b></td><td>The post attributes refusal, censorship, gatekeeping, limited access, surveillance, manipulation, dependence, or another constraint on human action to the system, operator, or AI-enabled process.</td></tr>
+<tr><td><b>The post describes incorrect, unreliable, deteriorating, or harmful AI output</b></td><td>The post represents errors, hallucinations, poor or worsening quality, unreliability, harmful synthetic output, misinformation, fraud, or stereotypes. Human harm alone does not establish this answer unless the AI output or performance is also described as defective or harmful.</td></tr>
 <tr><td><b>No clear outcome for the AI system or ecosystem</b></td><td>AI may be mentioned, questioned, advertised, credited, or discussed, but no clear function, growth, restriction, failure, or damaging outcome is represented.</td></tr>
 </table>
 
 <h3>Fast decision rules</h3>
 <ul>
 <li><b>Existing task improved →</b> people improve something they already do. <b>Genuinely new capacity or path →</b> people gain a new ability or possibility.</li>
-<li><b>Less autonomy, privacy, access, or choice →</b> people have less control. <b>Actual loss of skill, livelihood, creativity, identity, or well-being →</b> people lose something.</li>
-<li>A product or feature advertisement does not automatically establish a human experience. A concrete claimed function or output can still establish that the system is represented as working.</li>
+<li><b>Less autonomy, privacy, access, or choice →</b> people have less control. <b>Actual deterioration in skill, livelihood, creativity, identity, or sustained well-being →</b> people lose something. When both appear, use the outcome that is most explicit and central.</li>
+<li>A product or feature list alone normally gives no clear human outcome. If the post explicitly says AI makes people’s existing work faster, easier, or better, choose the existing-task-improvement answer even when the post is promotional. A concrete successful function or output can still establish that the system is represented as working.</li>
 <li>“Smarter,” “better,” “faster,” or a useful completed output concerns system performance. Use the growth choice only when data, learning, profit, users, adoption, or reach is explicit and central.</li>
 <li>“AI was tested” with no result, an event announcement, an unrelated #AI tag, or a general question about AI usually gives no clear system outcome.</li>
-<li>For AI-generated content, look at the wording: a concrete useful output supports system performance; an explicit new creative path can support a new human possibility; a bare credit or hashtag alone may remain neutral.</li>
-<li>If several signals appear, choose the clearest main representation in the post. Do not invent a secondary effect.</li>
-<li><b>Do not ask what AI wants, feels, or deserves.</b> Judge only the behavior or outcome that the post attributes to the system, operator, or ecosystem.</li>
+<li>For AI-generated content, “I created this with [AI tool]” can support improvement of an existing human activity and a successful AI output. An explicitly new creative path can support a new human possibility. A bare credit, repost, or hashtag alone may remain neutral.</li>
+<li><b>Do not ask what AI wants, feels, or deserves.</b> Judge only the action or outcome that the post attributes to the system, operator, or ecosystem.</li>
 </ul></section></main><script></script></body></html>
